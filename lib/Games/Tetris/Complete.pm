@@ -17,7 +17,7 @@ BEGIN {
 }
 $| = 1;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # Globals
 my $semaphore           = Thread::Semaphore->new();
@@ -167,8 +167,7 @@ sub player_thread {
         last if _game_over();
         if ( my $action = get_input( 0.5 ) ) {
             $semaphore->down;
-            my $print = $action->( $self );
-            block_to_print();
+            block_to_print() if $action->( $self );
             $semaphore->up;
         }
     }
@@ -184,7 +183,7 @@ sub game_thread {
         usleep( $sleep_microseconds / ( $speedup * ( int $self->level + 1 ) ) );
         last if _game_over();
         $semaphore->down;
-        if ( my $print = $self->down( 1 ) ) {
+        if ( $self->down( 1 ) ) {
             block_to_print();
         }
         else {

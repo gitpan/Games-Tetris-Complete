@@ -5,7 +5,7 @@ use Data::Dumper;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # Upper left corner of grid
 for ( qw( ulx uly ) ) {
