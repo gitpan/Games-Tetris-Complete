@@ -1,5 +1,7 @@
 Games-Tetris-Complete
 
+Play Tetris on the console.
+
 USAGE
 
 perl -MGames::Tetris::Complete -e "play" [width height]

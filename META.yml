@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:               Games-Tetris-Complete
-version:            0.01
-abstract:           ~
+version:            0.02
+abstract:           Play Tetris from the console
 author:
-    - Blake Willmarth,Hye-Jin Lee <bwillmarth@gmail.com>
+    - Blake Willmarth <bwillmarth@gmail.com>
 license:            perl
 distribution_type:  module
 configure_requires:
@@ -11,7 +11,12 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Test::More:  0
+    Moose:              1.18
+    Term::ReadKey:      0
+    Term::Screen::Uni:  0
+    Test::More:         0
+    Thread::Semaphore:  0
+    Time::HiRes:        0
 no_index:
     directory:
         - t

@@ -4,7 +4,8 @@ use warnings;
 use Data::Dumper;
 use Moose;
 use Moose::Util::TypeConstraints;
-$| = 1;
+
+our $VERSION = '0.02';
 
 # Upper left corner of grid
 for ( qw( ulx uly ) ) {

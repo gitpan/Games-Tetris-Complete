@@ -17,7 +17,7 @@ BEGIN {
 }
 $| = 1;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # Globals
 my $semaphore           = Thread::Semaphore->new();
